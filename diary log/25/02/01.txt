@@ -1,0 +1,46 @@
+SCI6.BRR = 10;に設定すると、近藤科学公式回路でサーボが動作した。
+
+----------------------------------------------------------------------------------
+	//SCI6用
+		MSTP_SMCI6 = 0;				//SCI6モジュールスタンバイ解除
+		SCI6.SCR.BYTE = 0x00;		//送信,受信及び割り込み要求を禁止
+		MPC.PWPR.BIT.B0WI = 0;		//PFSWEビットへの書き込みを許可
+		MPC.PWPR.BIT.PFSWE = 1;		//PFSレジスタへの書き込みを許可
+		MPC.PB0PFS.BIT.PSEL = 11;	//PB0をRXD6に設定(ユーザーズマニュアル20.2.9参照)
+		MPC.PB1PFS.BIT.PSEL = 11;	//PB1をTXD6に設定
+		MPC.PWPR.BIT.PFSWE = 0;		//PFSレジスタへの書き込みを禁止
+		MPC.PWPR.BIT.B0WI = 1;		//PFSWEビットへの書き込みを禁止
+		PORTB.PMR.BIT.B0 = 1;		//TXD6を周辺モジュール入出力に設定
+		PORTB.PMR.BIT.B1 = 1;		//RXD6を周辺モジュール入出力に設定
+		SCI6.SCR.BIT.CKE = 0;		//クロック設定
+		SCI6.SMR.BYTE = 0x20;		//b0 					0：
+									//b1クロック選択ビット			0：PCLKクロック(n=0)
+									//b2 マルチプロセッサモードビット	0：マルチプロセッサ通信機能を禁止
+									//b3 ストップビット長選択		0：1ストップビット
+									//b4 パリティモードビット			0：偶数パリティで送受信
+									//b5 パリティ許可ビット			1：パリティビットを付加
+									//b6 キャラクタ長ビット			0：データ長8ビットで送受信
+									//b7 コミュニケーションモードビット	0：調歩同期式モードで動作
+		SCI6.SCMR.BIT.SDIR = 0; 		//初期値
+		IPR(SCI6,TXI6) = 15;		//割り込み優先度設定
+		IPR(SCI6,RXI6) = 15;		//割り込み優先度設定
+		SCI6.SEMR.BIT.ABCS = 1;
+		SCI6.SEMR.BIT.NFEN = 1;
+
+		//sci_brr = (20000000 * 10) / (64 * SCI_BITRATE3 / 2) - 10;
+		//sci_brr = (sci_brr + 5) / 10;
+		SCI6.BRR = 10; //115200bpsになるよう調整
+
+		IR(SCI6,TXI6) = 0;			//割り込み要求フラグクリア
+		IR(SCI6,RXI6) = 0;			//割り込み要求フラグクリア
+		for(dummy = 0; dummy < 50000; dummy++);//ちょっと待つ
+		SCI6.SCR.BIT.TIE = 1;		//TXI割り込み許可
+		SCI6.SCR.BIT.RIE = 0;		//RXI割り込み許可
+		SCI6.SCR.BIT.TEIE = 0; 		//送信完了割り込み許可ビット
+		//SCI6.SCR.BYTE |= 0x30;        //送信開始＋受信開始
+		SCI6.SCR.BIT.TE = 1;		//送信開始
+		SCI6.SCR.BIT.RE = 0;		//受信開始
+		dummy = SCI6.SSR.BYTE;		//ダミーリード
+		SCI6.SSR.BYTE |= 0xC0;		//フラグクリア
+
+  ----------------------------------------------------------------------------------
