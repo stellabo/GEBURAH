@@ -64,6 +64,11 @@ https://monoist.itmedia.co.jp/mn/articles/1603/04/news042.html
 このような増強用ICまたは回路をドライバという。ドライバを構成するには、トランジスタを組み合わせたり、
 標準ロジックICや専用ドライバICを使ったりする。
 
+マイコン内臓RGBLEDモジュール(AE-WS2812B)を使う場合を考える。
+最大値(256,256,256)で使う場合、1個でも50mA消費する。モジュールを繋げるほど消費電流は上がる。
+(64,64,64)以内で制御する場合、電流を抑えることができ、64個のLEDを(64,64,64)で光らせると600mAほど。
+
+https://www.marutsu.co.jp/pc/static/large_order/WS2812B_0124?srsltid=AfmBOoo_J_YjlMU_hhnhPqBsiq5hEkdtjuPHg4sfIkIEnD2hZe-I1E6C
 
 
 
