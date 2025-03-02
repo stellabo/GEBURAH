@@ -1,1 +1,17 @@
+クロック→実際の通信にかかる時間の換算例
 
+今回はWS2812BとWS2812Cに代表される、データ線一本で駆動するタイプの賢いLEDの駆動の話。 
+コイツラはたくさんつないでたくさん信号を送る都合上、例えば「1」を送るときに出すパルスのHighが220ns~380ns、Lowが580ns~1µsとだいぶ幅が短い。
+
+今回使うPIC16F1705の最大クロックは32MHzなので、1命令にかかる時間は125ns(*1)である。
+つまり、WS2812での「1」の信号を送るとすると、Highが3Cycle、Lowが8Cycleだけで、
+その11Cycleでなんとか24bit分の信号の処理をしつつきれいなパルス幅を出してやらねばならない。 
+・・・なんてことはほぼ無理である。
+
+(*1) 1[s]/(32M/4)[Hz]、PIC16Fは4クロックで1命令処理
+
+https://asi-a.hatenablog.jp/entry/2021/10/05/105743
+
+https://blog.handen.net/archives/19087339.html
+http://hello.world.coocan.jp/ARDUINO19/arduino19_1.html
+https://takafoi.hatenablog.com/entry/2017/10/25/162654
