@@ -15,3 +15,7 @@ https://asi-a.hatenablog.jp/entry/2021/10/05/105743
 https://blog.handen.net/archives/19087339.html
 http://hello.world.coocan.jp/ARDUINO19/arduino19_1.html
 https://takafoi.hatenablog.com/entry/2017/10/25/162654
+
+
+ws2812bを操るのに大量の配列がいるが、メモリーは大丈夫か
+複数の割り込みが発生した場合は？
