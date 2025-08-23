@@ -4,5 +4,9 @@
 https://akizukidenshi.com/catalog/g/g107187/
 
 ・レギュレーター
+候補１：https://akizukidenshi.com/catalog/g/g117599/
+候補２(DCDCコンバーター)：https://akizukidenshi.com/catalog/g/g106187/
 
-・水晶発振子
+・水晶発振子(20MHz)
+候補１：https://akizukidenshi.com/catalog/g/g101757/
+候補２：https://akizukidenshi.com/catalog/g/g102458/
