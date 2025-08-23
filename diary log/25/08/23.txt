@@ -16,3 +16,5 @@ https://akizukidenshi.com/catalog/g/g107187/
 ・導通確認用のチップLED
 
 ・フルカラーLED用のFET
+
+・DFPlayer　mini
