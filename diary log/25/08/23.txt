@@ -12,3 +12,7 @@ https://akizukidenshi.com/catalog/g/g107187/
 ・水晶発振子(20MHz)
 候補１：https://akizukidenshi.com/catalog/g/g101757/
 候補２：https://akizukidenshi.com/catalog/g/g102458/
+
+・導通確認用のチップLED
+
+・フルカラーLED用のFET
