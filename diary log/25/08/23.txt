@@ -13,9 +13,10 @@ https://akizukidenshi.com/catalog/g/g107187/
 候補１：https://akizukidenshi.com/catalog/g/g101757/
 候補２：https://akizukidenshi.com/catalog/g/g102458/
 
-・導通確認用のチップLED
-
-・フルカラーLED用のFET
+・フルカラーLED(AE-WS2812B)
+マイコンのMOSI端子のみで制御できるフルカラーLED。
+複数LEDの数珠繋ぎにも対応してるが、輝度を上げすぎると消費電流が馬鹿にならないので、扱いには十分気を付ける。
+電圧供給ラインにFETを設置することを忘れない。
 
 ・DFPlayer　mini
 
