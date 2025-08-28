@@ -16,3 +16,6 @@ PchFET：G090P02S
 https://www.marutsu.co.jp/pc/i/16235649/
 SI4463CDY-T1-GE3
 https://www.marutsu.co.jp/pc/i/28929161/
+
+LED制御用：
+NchMOSFET 20V0.73A TN0200K
