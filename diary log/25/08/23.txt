@@ -6,6 +6,7 @@ https://akizukidenshi.com/catalog/g/g107187/
 ・レギュレーター
 今回、複数のサーボとフルカラーLEDを接続するため、これらを同時使用する際に、
 レギュレーターの電流供給能力によっては、電流が不足する懸念がある。
+レギュレーターは発熱が酷くなる可能性がある。
 候補１：https://akizukidenshi.com/catalog/g/g117599/
 候補２(DCDCコンバーター)：https://akizukidenshi.com/catalog/g/g106187/
 
